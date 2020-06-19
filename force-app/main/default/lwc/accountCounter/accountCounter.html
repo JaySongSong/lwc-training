@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout vertical-align="center">
+        
+        <lightning-layout-item class="slds-p-around_x-small">
+                <lightning-button disabled={disableButton} variant="brand" label="Save Accounts" title="Save New Accounts" onclick={handleSaveDrafts} class="slds-m-left_x-small"></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-p-around_xx-small">
+                <p><strong>DRAFTS: <lightning-formatted-number value={draftCount} class="slds-text-color_success"></lightning-formatted-number></strong></p>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-p-around_xx-small">
+                <p><strong>MODIFIED: <lightning-formatted-number value={modifiedCount} class="slds-text-color_success"></lightning-formatted-number></strong></p>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

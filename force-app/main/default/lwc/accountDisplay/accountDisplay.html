@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  title="Accounts">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        <template if:false={error}>
+            <template if:true={accounts.length}>
+                <lightning-datatable 
+                    key-field="tag"
+                    data={accounts}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                    onrowselection={handleRowSelection}
+                    selected-rows={selectedRows}
+                    errors={errors}>
+                </lightning-datatable>
+                <div>
+                    <c-account-counter draft-count={draftsCnt} modified-count={modifiedCnt} onsave={handleSave}>
+                    </c-account-counter>
+                </div>
+            </template>
+            <template if:false={accounts.length}>
+                <h1 class="slds-align_absolute-center" ><lightning-formatted-text value='No Accounts Found'></lightning-formatted-text></h1>
+            </template>
+        </template>
+        <template if:true={error}>
+            <h1 class="slds-align_absolute-center" ><lightning-formatted-text value={error}></lightning-formatted-text></h1>
+        </template>
+    </lightning-card>
+</template>
