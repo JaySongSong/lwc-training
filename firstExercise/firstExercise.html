@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="First Exercise" icon-name="custom:custom1">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                label="What's on your mind?"
+                value={post}
+                onchange={handleTextChange}
+            ></lightning-input>
+            <div class="slds-m-around_medium">
+                <lightning-input
+                    type="checkbox"
+                    label="Show what you think"
+                    onchange={handleTickChange}
+                ></lightning-input>
+    
+                <div class="slds-m-vertical_medium">
+                    <template if:true={areThoughtsVisible}>
+                        <p>{post}</p>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
