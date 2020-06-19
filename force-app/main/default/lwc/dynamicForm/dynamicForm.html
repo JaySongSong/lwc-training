@@ -1,0 +1,46 @@
+<template>
+    <lightning-card
+        title="Dynamic Form"
+        icon-name="action:record">
+        <div class="slds-m-around_medium">
+            <template if:true={loaded}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+            <lightning-input
+                label="Object Name"
+                type="string"
+                class="string-input"
+                required="required"
+                name="object"
+                value={form.object}
+            ></lightning-input>
+            <lightning-input
+                label="Fields (Comma separated)"
+                type="string"
+                class="string-input"
+                required="required"
+                name="fields"
+                value={form.fields}
+            ></lightning-input>  
+            <br />
+            <lightning-button variant="brand" label="Generate Form" title="Generate Form" onclick={generateForm} class="slds-m-top_small"></lightning-button>
+        </div>
+    </lightning-card>    
+    <template if:true={generated}>
+        <br />
+        <lightning-card
+        title={formtitle}
+        icon-name="action:description">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={object}
+                fields={fields}
+                onerror={formError}
+                onload={formLoaded}
+                oncancel={formCancel}
+                onsuccess={formSuccess}
+            ></lightning-record-form>
+        </div>
+        </lightning-card>
+    </template>
+</template>

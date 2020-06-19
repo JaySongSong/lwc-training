@@ -1,0 +1,11 @@
+<template>    
+    <lightning-layout multiple-rows="false">
+        <template for:each={_contacts} for:item="con">
+            <lightning-layout-item key={con.Id} padding="around-small" size="4">
+                <lightning-card title={con.Name} icon-name="custom:custom14">
+                    <img src={con.Picture__c}/>
+                </lightning-card>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template>

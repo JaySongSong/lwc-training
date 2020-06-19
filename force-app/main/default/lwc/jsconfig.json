@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/accountCounter": [
+                "accountCounter/accountCounter.js"
+            ],
+            "c/accountDisplay": [
+                "accountDisplay/accountDisplay.js"
+            ],
+            "c/accountEditor": [
+                "accountEditor/accountEditor.js"
+            ],
+            "c/dynamicForm": [
+                "dynamicForm/dynamicForm.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
+            ],
+            "c/testLwc": [
+                "testLwc/testLwc.js"
+            ],
+            "c/firstExercise": [
+                "firstExercise/firstExercise.js"
+            ],
+            "c/secondExercise": [
+                "secondExercise/secondExercise.js"
+            ],
+            "c/childCard": [
+                "childCard/childCard.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
